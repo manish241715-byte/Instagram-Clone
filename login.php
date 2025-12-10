@@ -54,15 +54,42 @@ body { font-family: Arial, sans-serif; background:#fafafa; display:flex; justify
 .phone img { width:300px; height:auto; border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
 .login-box { width:300px; background:#fff; padding:20px; border:1px solid #ddd; border-radius:10px; text-align:center; }
 .login-box h1.logo { font-family: 'Lucida Handwriting', cursive; margin-bottom:20px; }
-.login-box input { width:90%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:5px; }
-.login-box button { width:95%; padding:10px; margin-top:10px; background:#0095f6; color:#fff; border:none; border-radius:5px; cursor:pointer; font-weight:bold; }
-.password-box { position:relative; }
-#togglePassword { position:absolute; right:15px; top:12px; cursor:pointer; }
+
+.login-box input[type="text"],
+.password-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.password-box input {
+    padding-right: 40px; /* extra space for eye icon */
+}
+
+#togglePassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+}
+
 .signup-box { text-align:center; margin-top:15px; }
 .signup-box a { color:#0095f6; text-decoration:none; font-weight:bold; }
 .get-app { text-align:center; margin-top:30px; }
 .get-app p { margin-bottom:10px; font-weight:bold; }
 .app-buttons img { width:120px; margin:5px; }
+
+.password-box {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
 </style>
 </head>
 <body>
