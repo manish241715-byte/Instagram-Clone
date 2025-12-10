@@ -42,7 +42,6 @@ $conn->close();
 <title>Instagram - Register</title>
 <link rel="stylesheet" href="style.css">
 <style>
-/* Simple, gentle Instagram-like form */
 body {
     font-family: Arial, sans-serif;
     background-color: #fafafa;
