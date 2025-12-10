@@ -95,7 +95,6 @@ body { font-family: Arial, sans-serif; background:#fafafa; display:flex; justify
 <body>
 <div class="container">
 
-    <!-- Phone mock -->
     <div class="phone">
         <img src="https://instahomepageby-keerthi.netlify.app/media/insta.png" alt="Instagram Phone Mock">
     </div>
@@ -149,3 +148,4 @@ toggleBtn.onclick = function () {
 </script>
 </body>
 </html>
+ <!-- Hello boos -->
