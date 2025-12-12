@@ -22,7 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt2 = $conn->prepare("INSERT INTO users (fullname, username, email, password) VALUES (?, ?, ?, ?)");
         $stmt2->bind_param("ssss", $fullname, $username, $email, $password);
         if($stmt2->execute()){
-            header("Location: login.php");
+            // 🔥 Only change: Automatically log in and go to welcome.php
+            $_SESSION['username'] = $username;
+            header("Location: welcome.php");
             exit;
         } else {
             $error = "Error: ".$conn->error;

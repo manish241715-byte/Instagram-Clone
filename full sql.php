@@ -38,3 +38,17 @@ INSERT INTO stories (id, user_id, media) VALUES
 (5, 5, 'bhupendra_story.jpg');
 
 SET FOREIGN_KEY_CHECKS = 1;
+//this is for profile
+DROP TABLE IF EXISTS `followers`;
+
+CREATE TABLE `followers` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `user_id` INT NOT NULL,    -- the user who is following someone
+    `follow_id` INT NOT NULL   -- the user being followed
+);
+
+INSERT INTO `followers` (`user_id`, `follow_id`) VALUES
+(2,1),  -- user 2 follows you
+(3,1),  -- user 3 follows you
+(1,4),  -- you follow user 4
+(1,5);  -- you follow user 5
