@@ -1,5 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start();
+
 if(!isset($_SESSION['username'])){ header("Location: login.php"); exit; }
 $conn = new mysqli("127.0.0.1","root","","instagram_clone");
 if($conn->connect_error) die("Connection failed: ".$conn->connect_error);

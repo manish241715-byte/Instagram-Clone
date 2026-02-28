@@ -1,316 +1,310 @@
 /* ===== GENERAL BODY STYLES ===== */
 body { 
-    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; /* sets main font for page */
-    background:#000; /* black background */
-    color:#fff; /* white text by default */
-    margin:0; /* removes default margin */
-    display:flex; /* use flex layout */
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#000;
+    color:#fff;
+    margin:0;
+    display:flex;
 }
 
 .header { 
-    display:flex; /* flex layout for header content */
-    justify-content:center; /* center horizontally */
-    align-items:center; /* center vertically */
-    padding:12px; /* spacing inside header */
-    background:#111; /* dark header background */
-    position:sticky; /* sticks header on top when scrolling */
-    top:0; /* stick to top */
-    z-index:100; /* make sure header is above other content */
-    width:100%; /* full width */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:12px;
+    background:#111;
+    position:sticky;
+    top:0;
+    z-index:100;
+    width:100%;
 }
 
 .header h1 { 
-    font-family:'Pacifico', cursive; /* fancy cursive font */
-    font-size:28px; /* font size */
-    color:#fff; /* white color */
-    margin:0; /* remove default margin */
+    font-family:'Pacifico', cursive;
+    font-size:28px;
+    color:#fff;
+    margin:0;
 }
 
 .logout-btn { 
-    position:absolute; /* position independently */
-    right:20px; /* distance from right edge */
-    text-decoration:none; /* remove underline */
-    color:#0095f6; /* Instagram blue */
-    font-weight:bold; /* bold text */
+    position:absolute;
+    right:20px;
+    text-decoration:none;
+    color:#0095f6;
+    font-weight:bold;
 }
-
-/* ===== LEFT NAVBAR ===== */
+/* Button-style vertical bar (like Instagram) */
 .sidebar {
-    position: fixed; /* always visible */
-    left: 0; /* attach to left */
-    top: 150px; /* below header */
-    width: 60px; /* narrow sidebar */
-    height: calc(100vh - 150px); /* fill remaining height */
-    background: #111; /* dark sidebar */
-    display: flex; 
-    flex-direction: column; /* vertical buttons */
-    align-items: center; /* center buttons */
-    padding-top: 20px; /* spacing at top */
-    gap: 40px; /* space between buttons */
-    border-right: 1px solid #222; /* subtle border */
-    z-index: 100; /* above main content */
+    position: fixed;
+    bottom: 20px;           /* From bottom */
+    left: 20px;             /* From left */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;              /* Space between icons */
+    background: rgba(0,0,0,0.6); /* Slightly transparent background */
+    padding: 10px;
+    border-radius: 12px;
+    z-index: 1000;
 }
 
-.sidebar button { 
-    background:none; /* transparent button */
-    border:none; 
-    color:#fff; /* white icon */
-    font-size:24px; 
-    cursor:pointer; 
-    transition:0.3s; /* smooth hover */
-    border-radius:8px; /* rounded edges */
-    padding:8px; 
+/* Style each icon button */
+.sidebar button {
+    background: #111;        /* Dark button background */
+    border: none;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;      /* Circle buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.2s, background 0.2s;
 }
 
-.sidebar button:hover { 
-    background: rgba(255,255,255,0.1); /* light hover effect */
-    transform:scale(1.15); /* enlarge slightly on hover */
+.sidebar button:hover {
+    transform: scale(1.2);
+    background: #feda75;    /* Instagram highlight color on hover */
+    color: #000;
 }
 
-.sidebar button.active { 
-    color:#0095f6; /* highlight active button */
-    background:#222; /* darker background for active */
+.sidebar button.active {
+    background: #feda75;    /* Highlight active page */
+    color: #000;
 }
 
 /* ===== MAIN CONTENT ===== */
 .main-content { 
-    margin-left:60px; /* leave space for sidebar */
-    width:calc(100% - 60px); /* fill remaining width */
+    margin-left:60px;
+    width:calc(100% - 60px);
 }
 
 /* ===== STORIES ===== */
 .stories-container-wrapper { 
-    position:sticky; /* stick to top */
-    top:60px; 
-    background:#111; 
-    z-index:50; 
-    padding:8px 0; 
-    border-bottom:1px solid #222; 
-    display:flex; 
-    justify-content:center; 
+    position:sticky;
+    top:60px;
+    background:#111;
+    z-index:50;
+    padding:8px 0;
+    border-bottom:1px solid #222;
+    display:flex;
+    justify-content:center;
 }
 
 .stories-container { 
-    display:flex; 
-    gap:12px; 
-    overflow-x:auto; /* horizontal scroll */
-    scroll-behavior:smooth; 
-    align-items:center; 
-    max-width:100%; 
-    padding:0 12px; 
+    display:flex;
+    gap:12px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    align-items:center;
+    max-width:100%;
+    padding:0 12px;
 }
 
-.stories-container::-webkit-scrollbar { display:none; /* hide scrollbar */ }
+.stories-container::-webkit-scrollbar { display:none; }
 
-.story { 
-    text-align:center; 
-    flex:0 0 auto; /* prevent shrinking */
-}
-
+.story { text-align:center; flex:0 0 auto; }
 .story-circle { 
-    width:80px; 
-    height:80px; 
-    border-radius:50%; 
-    padding:2px; 
-    background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5); /* colorful border */
-    display:flex; 
-    align-items:center; 
-    justify-content:center; 
-    cursor:pointer; 
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    padding:2px;
+    background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
 }
-
 .story-circle img { 
-    width:72px; 
-    height:72px; 
-    border-radius:50%; 
-    object-fit:cover; 
-    border:2px solid #000; 
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #000;
 }
-
 .story-username { 
-    font-size:12px; 
-    margin-top:4px; 
-    color:#fff; 
-    white-space:nowrap; 
-    overflow:hidden; 
-    text-overflow:ellipsis; 
-    max-width:80px; 
+    font-size:12px;
+    margin-top:4px;
+    color:#fff;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:80px;
 }
 
 /* ===== POSTS ===== */
 .container { 
-    width:500px; /* container width for posts */
-    max-width:100%; /* responsive */
-    margin:15px auto 20px auto; /* center container */
-    display:flex; 
-    flex-direction:column; 
-    gap:20px; /* space between posts */
+    width:500px;
+    max-width:100%;
+    margin:15px auto 20px auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
 }
 
 .post { 
-    background:#111; 
-    border-radius:0px; 
-    border:1px solid #222; 
-    overflow:hidden; 
-    position:relative; 
+    background:#111;
+    border-radius:0px;
+    border:1px solid #222;
+    overflow:hidden;
+    position:relative;
 }
 
 .post-header { 
-    display:flex; 
-    align-items:center; 
-    padding:12px; 
-    gap:12px; 
+    display:flex;
+    align-items:center;
+    padding:12px;
+    gap:12px;
 }
 
 .post-header img { 
-    width:45px; 
-    height:45px; 
-    border-radius:50%; 
-    object-fit:cover; 
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    object-fit:cover;
 }
 
 .post-header span { 
-    font-weight:600; 
-    font-size:15px; 
-    color:#fff; 
+    font-weight:600;
+    font-size:15px;
+    color:#fff;
 }
 
-.post-content img { 
-    width:100%; 
-    max-height:600px; /* limit height */
-    object-fit:cover; 
-    cursor:pointer; 
-    transition:0.3s; 
-    border-radius:10px; 
+.post-content img, .post-content video { 
+    width:100%;
+    max-height:600px;
+    object-fit:cover;
+    cursor:pointer;
+    transition:0.3s;
+    border-radius:10px;
 }
 
-.post-content img:hover { transform: scale(1.02); }
+.post-content img:hover, .post-content video:hover { transform: scale(1.02); }
 
 .post-content p { 
-    padding:0 12px 12px 12px; 
-    margin:5px 0; 
-    font-size:14px; 
-    line-height:1.5; 
+    padding:0 12px 12px 12px;
+    margin:5px 0;
+    font-size:14px;
+    line-height:1.5;
     color:#fff;
 }
 
 .post-actions { 
-    display:flex; 
-    align-items:center; 
-    justify-content:space-between; 
-    padding:8px 12px; 
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 12px;
 }
 
 .post-actions-left { 
-    display:flex; 
-    align-items:center; 
-    gap:15px; 
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
 .post-actions button { 
-    background:none; 
-    border:none; 
-    cursor:pointer; 
-    font-size:24px; 
-    color:#fff; 
-    transition:0.2s; 
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:24px;
+    color:#fff;
+    transition:0.2s;
 }
 
 .likes-count { 
-    padding:0 12px 12px 12px; 
-    font-weight:500; 
-    font-size:14px; 
-    color:#fff; 
+    padding:0 12px 12px 12px;
+    font-weight:500;
+    font-size:14px;
+    color:#fff;
 }
 
 .comment-box { 
-    display:flex; 
-    gap:5px; 
-    padding:0 12px 12px 12px; 
+    display:flex;
+    gap:5px;
+    padding:0 12px 12px 12px;
 }
 
 .comment-box input { 
-    flex:1; 
-    padding:6px; 
-    border:1px solid #333; 
-    border-radius:4px; 
-    background:#222; 
+    flex:1;
+    padding:6px;
+    border:1px solid #333;
+    border-radius:4px;
+    background:#222;
     color:#fff;
 }
 
 .comment-box button { 
-    background:none; 
-    border:none; 
-    font-size:20px; 
-    cursor:pointer; 
+    background:none;
+    border:none;
+    font-size:20px;
+    cursor:pointer;
     color:#0095f6;
 }
 
 .comment-list { 
-    padding:0 12px 12px 12px; 
-    font-size:14px; 
+    padding:0 12px 12px 12px;
+    font-size:14px;
     color:#fff;
 }
 
 .comment-list b { margin-right:6px; }
 
 .heart-overlay { 
-    position:absolute; 
-    top:50%; 
-    left:50%; 
-    transform:translate(-50%,-50%); 
-    font-size:100px; 
-    color:rgba(255,0,0,0.7); 
-    display:none; 
-    pointer-events:none; 
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:100px;
+    color:rgba(255,0,0,0.7);
+    display:none;
+    pointer-events:none;
 }
 
-/* ===== REELS ===== */
-#reelsContainer { 
-    display:none; 
-    height:100vh; 
-    overflow-y:scroll; 
-    scroll-snap-type:y mandatory; 
-    flex-direction:column; 
+/* ===== INSTAGRAM‑STYLE BOTTOM NAV ===== */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #000;
+    border-top: 1px solid #212121;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
 }
 
-.reel { 
-    height:80vh; /* slightly smaller than full screen */
-    scroll-snap-align:start; 
-    display:flex; 
-    justify-content:center; 
-    align-items:center; 
-    position:relative; 
-    margin: 0vh auto; /* center vertically */
+.bottom-nav button {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    color: #fff;
+    font-size: 26px;
+    transition: transform 0.15s ease, color 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.reel video { 
-    max-height:100%; /* fill reel container */
-    max-width:90%; /* slightly narrower */
-    border-radius:20px; /* rounded corners */
+.bottom-nav button i {
+    width: 28px;
+    height: 28px;
 }
 
-/* ===== REELS BUTTONS FIXED ===== */
-.reel-buttons { 
-    display:flex; 
-    flex-direction:column; 
-    gap:20px; /* space between buttons */
-    position:absolute; /* position relative to reel */
-    right:20px; /* from right edge */
-    bottom:60px; /* from bottom */
-    align-items:center; 
+.bottom-nav button:hover,
+.bottom-nav button.active {
+    color: #fff;
 }
 
-.reel-buttons button { 
-    font-size:30px; 
-    background:none; 
-    border:none; 
-    color:white; 
-    cursor:pointer; 
-    transition:0.2s; 
+.bottom-nav button.active i {
+    color: #fff;
 }
 
-.reel-buttons button:hover { 
-    transform:scale(1.2); 
-    color:#0095f6; 
+.bottom-nav button:hover i {
+    transform: scale(1.2);
+    color: #fff;
 }
